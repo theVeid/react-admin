@@ -1,4 +1,5 @@
 import React from 'react';
+import compose from 'recompose/compose';
 import {
     Create,
     DateInput,
@@ -7,6 +8,7 @@ import {
     TabbedForm,
     TextInput,
     PasswordInput,
+    translate as withTranslation
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -15,7 +17,8 @@ export const styles = {
     last_name: { display: 'inline-block', marginLeft: 32 },
     email: { width: 544 },
     birthday: { display: 'inline-block' },
-    password: { display: 'inline-block', marginLeft: 32 },
+    password: { display: 'inline-block' },
+    confirm_password: { display: 'inline-block', marginLeft: 32 },
     address: { maxWidth: 544 },
     zipcode: { display: 'inline-block' },
     city: { display: 'inline-block', marginLeft: 32 },
@@ -23,13 +26,23 @@ export const styles = {
         maxWidth: '20em',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-    },
+        whiteSpace: 'nowrap'
+    }
 };
 
-const VisitorCreate = ({ classes, ...props }) => (
+export const validatePasswords = translate => ({ password, confirm_password }) => {
+    const errors = {};
+
+    if (password && confirm_password && password !== confirm_password) {
+        errors.confirm_password = [translate('resources.customers.errors.password_mismatch')];
+    }
+
+    return errors;
+};
+
+const VisitorCreate = ({ classes, translate, ...props }) => (
     <Create {...props}>
-        <TabbedForm>
+        <TabbedForm validate={validatePasswords(translate)}>
             <FormTab label="resources.customers.tabs.identity">
                 <TextInput autoFocus source="first_name" formClassName={classes.first_name} />
                 <TextInput source="last_name" formClassName={classes.last_name} />
@@ -41,15 +54,21 @@ const VisitorCreate = ({ classes, ...props }) => (
                     formClassName={classes.email}
                 />
                 <DateInput source="birthday" formClassName={classes.birthday} />
-                <PasswordInput source="password" formClassName={classes.password} />
             </FormTab>
             <FormTab label="resources.customers.tabs.address" path="address">
                 <LongTextInput source="address" formClassName={classes.address} />
                 <TextInput source="zipcode" formClassName={classes.zipcode} />
                 <TextInput source="city" formClassName={classes.city} />
             </FormTab>
+            <FormTab label="resources.customers.tabs.password" path="password">
+                <PasswordInput source="password" formClassName={classes.password} required />
+                <PasswordInput source="confirm_password" formClassName={classes.confirm_password} required />
+            </FormTab>
         </TabbedForm>
     </Create>
 );
 
-export default withStyles(styles)(VisitorCreate);
+export default compose(
+    withTranslation,
+    withStyles(styles)
+)(VisitorCreate);

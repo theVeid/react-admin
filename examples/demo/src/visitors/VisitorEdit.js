@@ -1,4 +1,5 @@
 import React from 'react';
+import compose from 'recompose/compose';
 import {
     Datagrid,
     DateField,
@@ -9,10 +10,12 @@ import {
     LongTextInput,
     NullableBooleanInput,
     NumberField,
+    PasswordInput,
     ReferenceManyField,
     TabbedForm,
     TextField,
-    TextInput
+    TextInput,
+    translate as withTranslation
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -21,13 +24,13 @@ import ProductReferenceField from '../products/ProductReferenceField';
 import StarRatingField from '../reviews/StarRatingField';
 import FullNameField from './FullNameField';
 import SegmentsInput from './SegmentsInput';
-import { styles } from './VisitorCreate';
+import { styles, validatePasswords } from './VisitorCreate';
 
 const VisitorTitle = ({ record }) => (record ? <FullNameField record={record} size={32} /> : null);
 
-const VisitorEdit = ({ classes, ...props }) => (
+const VisitorEdit = ({ classes, translate, ...props }) => (
     <Edit title={<VisitorTitle />} {...props}>
-        <TabbedForm>
+        <TabbedForm validate={validatePasswords(translate)}>
             <FormTab label="resources.customers.tabs.identity">
                 <TextInput source="first_name" formClassName={classes.first_name} />
                 <TextInput source="last_name" formClassName={classes.last_name} />
@@ -85,8 +88,15 @@ const VisitorEdit = ({ classes, ...props }) => (
                 <DateField source="latest_purchase" style={{ width: 128, display: 'inline-block' }} />
                 <DateField source="last_seen" style={{ width: 128, display: 'inline-block' }} />
             </FormTab>
+            <FormTab label="resources.customers.tabs.change_password" path="password">
+                <PasswordInput source="password" formClassName={classes.password} />
+                <PasswordInput source="confirm_password" formClassName={classes.confirm_password} />
+            </FormTab>
         </TabbedForm>
     </Edit>
 );
 
-export default withStyles(styles)(VisitorEdit);
+export default compose(
+    withTranslation,
+    withStyles(styles)
+)(VisitorEdit);

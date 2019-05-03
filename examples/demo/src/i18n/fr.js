@@ -9,7 +9,7 @@ export default {
         theme: {
             name: 'Theme',
             light: 'Clair',
-            dark: 'Obscur',
+            dark: 'Obscur'
         },
         dashboard: {
             monthly_revenue: 'CA à 30 jours',
@@ -18,22 +18,21 @@ export default {
             new_customers: 'Nouveaux clients',
             pending_orders: 'Commandes à traiter',
             order: {
-                items:
-                    'par %{customer_name}, un poster |||| par %{customer_name}, %{nb_items} posters',
+                items: 'par %{customer_name}, un poster |||| par %{customer_name}, %{nb_items} posters'
             },
             welcome: {
                 title: 'Bienvenue sur la démo de react-admin',
                 subtitle:
                     "Ceci est le back-office d'un magasin de posters imaginaire. N'hésitez pas à explorer et à modifier les données. La démo s'exécute en local dans votre navigateur, et se remet à zéro chaque fois que vous rechargez la page.",
                 aor_button: 'Site web de react-admin',
-                demo_button: 'Code source de cette démo',
-            },
+                demo_button: 'Code source de cette démo'
+            }
         },
         menu: {
             sales: 'Ventes',
             catalog: 'Catalogue',
-            customers: 'Clients',
-        },
+            customers: 'Clients'
+        }
     },
     resources: {
         customers: {
@@ -54,7 +53,7 @@ export default {
                 latest_purchase: 'Dernier achat',
                 name: 'Nom',
                 total_spent: 'Dépenses',
-                zipcode: 'Code postal',
+                zipcode: 'Code postal'
             },
             tabs: {
                 identity: 'Identité',
@@ -62,10 +61,12 @@ export default {
                 orders: 'Commandes',
                 reviews: 'Commentaires',
                 stats: 'Statistiques',
+                password: 'Mot de passe',
+                change_password: 'Changer le mot de passe'
             },
             page: {
-                delete: 'Supprimer le client',
-            },
+                delete: 'Supprimer le client'
+            }
         },
         commands: {
             name: 'Commande |||| Commandes',
@@ -78,7 +79,7 @@ export default {
                     sum: 'Sous-total',
                     tax_rate: 'TVA',
                     total: 'Total',
-                    unit_price: 'P.U.',
+                    unit_price: 'P.U.'
                 },
                 customer_id: 'Client',
                 date_gte: 'Emises depuis',
@@ -87,8 +88,8 @@ export default {
                 reference: 'Référence',
                 returned: 'Annulée',
                 status: 'Etat',
-                total_gte: 'Montant minimum',
-            },
+                total_gte: 'Montant minimum'
+            }
         },
         invoices: {
             name: 'Facture |||| Factures',
@@ -102,8 +103,8 @@ export default {
                 address: 'Adresse',
                 total_ex_taxes: 'Montant HT',
                 delivery_fees: 'Frais de livraison',
-                taxes: 'TVA',
-            },
+                taxes: 'TVA'
+            }
         },
         products: {
             name: 'Poster |||| Posters',
@@ -120,21 +121,21 @@ export default {
                 thumbnail: 'Aperçu',
                 width_gte: 'Largeur mini',
                 width_lte: 'Margeur maxi',
-                width: 'Largeur',
+                width: 'Largeur'
             },
             tabs: {
                 image: 'Image',
                 details: 'Détails',
                 description: 'Description',
-                reviews: 'Commentaires',
-            },
+                reviews: 'Commentaires'
+            }
         },
         categories: {
             name: 'Catégorie |||| Catégories',
             fields: {
                 name: 'Nom',
-                products: 'Produits',
-            },
+                products: 'Produits'
+            }
         },
         reviews: {
             name: 'Commentaire |||| Commentaires',
@@ -148,24 +149,24 @@ export default {
                 date: 'Date',
                 comment: 'Texte',
                 status: 'Statut',
-                rating: 'Classement',
+                rating: 'Classement'
             },
             action: {
                 accept: 'Accepter',
-                reject: 'Rejeter',
+                reject: 'Rejeter'
             },
             notification: {
                 approved_success: 'Commentaire approuvé',
                 approved_error: 'Erreur: Commentaire non approuvé',
                 rejected_success: 'Commentaire rejeté',
-                rejected_error: 'Erreur: Commentaire non rejeté',
-            },
+                rejected_error: 'Erreur: Commentaire non rejeté'
+            }
         },
         segments: {
             name: 'Segments',
             fields: {
                 customers: 'Clients',
-                name: 'Nom',
+                name: 'Nom'
             },
             data: {
                 compulsive: 'Compulsif',
@@ -173,8 +174,8 @@ export default {
                 ordered_once: 'A commandé',
                 regular: 'Régulier',
                 returns: 'A renvoyé',
-                reviewer: 'Commentateur',
-            },
-        },
-    },
+                reviewer: 'Commentateur'
+            }
+        }
+    }
 };

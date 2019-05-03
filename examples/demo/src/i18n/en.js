@@ -9,7 +9,7 @@ export default {
         theme: {
             name: 'Theme',
             light: 'Light',
-            dark: 'Dark',
+            dark: 'Dark'
         },
         dashboard: {
             monthly_revenue: 'Monthly Revenue',
@@ -18,22 +18,21 @@ export default {
             new_customers: 'New Customers',
             pending_orders: 'Pending Orders',
             order: {
-                items:
-                    'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items',
+                items: 'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items'
             },
             welcome: {
                 title: 'Welcome to react-admin demo',
                 subtitle:
                     "This is the admin of an imaginary poster shop. Fell free to explore and modify the data - it's local to your computer, and will reset each time you reload.",
                 aor_button: 'react-admin site',
-                demo_button: 'Source for this demo',
-            },
+                demo_button: 'Source for this demo'
+            }
         },
         menu: {
             sales: 'Sales',
             catalog: 'Catalog',
-            customers: 'Customers',
-        },
+            customers: 'Customers'
+        }
     },
     resources: {
         customers: {
@@ -43,7 +42,7 @@ export default {
                 groups: 'Segments',
                 last_seen_gte: 'Visited Since',
                 name: 'Name',
-                total_spent: 'Total spent',
+                total_spent: 'Total spent'
             },
             tabs: {
                 identity: 'Identity',
@@ -51,10 +50,15 @@ export default {
                 orders: 'Orders',
                 reviews: 'Reviews',
                 stats: 'Stats',
+                password: 'Password',
+                change_password: 'Change Password'
             },
             page: {
-                delete: 'Delete Customer',
+                delete: 'Delete Customer'
             },
+            errors: {
+                password_mismatch: 'The password confirmation is not the same as the first password.'
+            }
         },
         commands: {
             name: 'Order |||| Orders',
@@ -67,15 +71,15 @@ export default {
                     sum: 'Sum',
                     tax_rate: 'Tax Rate',
                     total: 'Total',
-                    unit_price: 'Unit Price',
+                    unit_price: 'Unit Price'
                 },
                 customer_id: 'Customer',
                 date_gte: 'Passed Since',
                 date_lte: 'Passed Before',
                 total_gte: 'Min amount',
                 status: 'Status',
-                returned: 'Returned',
-            },
+                returned: 'Returned'
+            }
         },
         invoices: {
             name: 'Invoice |||| Invoices',
@@ -86,8 +90,8 @@ export default {
                 date_gte: 'Passed Since',
                 date_lte: 'Passed Before',
                 total_gte: 'Min amount',
-                address: 'Address',
-            },
+                address: 'Address'
+            }
         },
         products: {
             name: 'Poster |||| Posters',
@@ -104,20 +108,20 @@ export default {
                 thumbnail: 'Thumbnail',
                 width_gte: 'Min width',
                 width_lte: 'Max width',
-                width: 'Width',
+                width: 'Width'
             },
             tabs: {
                 image: 'Image',
                 details: 'Details',
                 description: 'Description',
-                reviews: 'Reviews',
-            },
+                reviews: 'Reviews'
+            }
         },
         categories: {
             name: 'Category |||| Categories',
             fields: {
-                products: 'Products',
-            },
+                products: 'Products'
+            }
         },
         reviews: {
             name: 'Review |||| Reviews',
@@ -130,24 +134,24 @@ export default {
                 date_lte: 'Posted before',
                 date: 'Date',
                 comment: 'Comment',
-                rating: 'Rating',
+                rating: 'Rating'
             },
             action: {
                 accept: 'Accept',
-                reject: 'Reject',
+                reject: 'Reject'
             },
             notification: {
                 approved_success: 'Review approved',
                 approved_error: 'Error: Review not approved',
                 rejected_success: 'Review rejected',
-                rejected_error: 'Error: Review not rejected',
-            },
+                rejected_error: 'Error: Review not rejected'
+            }
         },
         segments: {
             name: 'Segments',
             fields: {
                 customers: 'Customers',
-                name: 'Name',
+                name: 'Name'
             },
             data: {
                 compulsive: 'Compulsive',
@@ -155,8 +159,8 @@ export default {
                 ordered_once: 'Ordered once',
                 regular: 'Regular',
                 returns: 'Returns',
-                reviewer: 'Reviewer',
-            },
-        },
-    },
+                reviewer: 'Reviewer'
+            }
+        }
+    }
 };
