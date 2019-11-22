@@ -12,6 +12,8 @@ import {
     TabbedForm,
     TextField,
     TextInput,
+    ReferenceArrayInput,
+    AutocompleteArrayInput,
 } from 'react-admin';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -124,6 +126,14 @@ const VisitorEdit = props => {
                         source="last_seen"
                         style={{ width: 128, display: 'inline-block' }}
                     />
+                </FormTab>
+                <FormTab label={'Commands'} path={'commands'}>
+                    <ReferenceArrayInput
+                        source={'commands_ids'}
+                        reference={'commands'}
+                    >
+                        <AutocompleteArrayInput optionText={'reference'} />
+                    </ReferenceArrayInput>
                 </FormTab>
             </TabbedForm>
         </Edit>

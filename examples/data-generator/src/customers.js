@@ -30,5 +30,6 @@ export default (db, { serializeDate }) =>
             groups: [], // finalize
             nb_commands: 0,
             total_spent: 0,
+            commands_ids: [376, 84, 506],
         };
     });
